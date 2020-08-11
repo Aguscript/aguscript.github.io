@@ -46,12 +46,16 @@ body {
   overflow: hidden;
 }
 
-.messages-area {
-  display: flex;
-  flex-direction: column;
+.messages-wrapper {
   height: 447px;
   padding-top: 10px;
   padding-bottom: 10px;
+  overflow-y: scroll;
+}
+
+.messages-area {
+  display: flex;
+  flex-direction: column;
   /* background-color: var(--chat-bg); */
 }
 

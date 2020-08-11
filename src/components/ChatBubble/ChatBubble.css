@@ -1,0 +1,48 @@
+.bubble-container {
+  display: inline-flex;
+  max-width: 80%;
+  margin-bottom: 1px;
+  padding: 0 3px 3px 20px;
+  overflow: hidden;
+}
+
+.bubble {
+  display: inline-flex;
+  position: relative;
+  padding: 7px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
+}
+
+.bubble-container:first-child .bubble:after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -4px;
+  width: 18px;
+  height: 18px;
+  transform: rotate(45deg);
+  border-bottom-left-radius: 3px;
+  background-color: #fff;
+  visibility: visible;
+}
+
+.message {
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.time {
+  display: flex;
+  align-items: flex-end;
+  font-size: 13px;
+  color: rgba(0,0,0,.5);
+  margin-left: 10px;
+}
+
+a {
+  color: #008a7a;
+  font-weight: 400;
+  text-decoration: none;
+}
