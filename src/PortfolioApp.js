@@ -2,29 +2,54 @@ import React from 'react';
 import { Chat } from './components/Chat/Chat';
 import styled from 'styled-components';
 
-import noteBG from './assets/note.svg';
+import phoneBG from './assets/phone.svg';
 
 export const PortfolioApp = () => {
   return (
-    <AppContainer>
-      <Chat />
-    </AppContainer>
+    <AppWrapper>
+      <AppContainer>
+        <Chat />
+      </AppContainer>
+    </AppWrapper>
   );
 };
+
+const AppWrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+`;
+
+const ApppContainer = styled.div`
+  height: 980px;
+  width: 1400px;
+  margin: 0 auto;
+  background-image: url(${phoneBG});
+  background-repeat: no-repeat;
+  background-attachment: local;
+  position: relative;
+
+  @media only screen and (max-width: 992px) {
+    background-image: none;
+    background-repeat: initial;
+    background-attachment: initial;
+    height: 100vh;
+    display: flex;
+
+    position: static;
+  }
+`;
 
 const AppContainer = styled.div`
   display: flex;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #f9d29d;
-  background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%); */
-  background-image: url(${noteBG});
-  background-repeat: no-repeat;
-  background-size: 100vw;
+  position: relative;
 
-  @media only screen and (min-width: 360px) and (max-width: 767px) {
-    align-items: flex-start;
-    height: 91vh;
+  @media only screen and (min-width: 992px) {
+    height: 980px;
+    width: 1400px;
+    margin: 0 auto;
+    background-image: url(${phoneBG});
+    background-repeat: no-repeat;
+    background-attachment: local;
   }
 `;

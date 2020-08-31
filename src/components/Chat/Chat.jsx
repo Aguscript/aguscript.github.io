@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Chat.css';
 import { ChatBubble } from '../ChatBubble/ChatBubble';
 import avatar from '../../assets/Avatar.jpg';
@@ -37,6 +37,12 @@ export const Chat = () => {
   const [replies, setReplies] = useState(0);
   const [isBlocked, setIsBlocked] = useState(false);
 
+  const lastRef = useRef(null);
+
+  const scrollToBottom = () => {
+    lastRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const renderNewMessage = () => {
     if (newMessage.trim().length === 0) {
       return;
@@ -68,7 +74,7 @@ export const Chat = () => {
         setMessages((messages) => [
           ...messages,
           {
-            content: '!tabla',
+            content: '¿Usted no aprende, verdad? Un mensaje más y hay tabla.',
             sender: 'aguscript',
           },
         ]);
@@ -84,6 +90,7 @@ export const Chat = () => {
         ]);
         setReplies((replies) => (replies += 1));
         setIsBlocked(true);
+        break;
       default:
         break;
     }
@@ -104,14 +111,19 @@ export const Chat = () => {
           <h4>Agustín Rodriguez</h4>
           {!isBlocked && <span>en línea</span>}
         </div>
-        <span className="material-icons icons">more_vert</span>
+        <span className="material-icons icons dots">more_vert</span>
       </div>
 
       <div className="messages-wrapper">
         <div className="messages-area">
           {messages.map((message, i) => (
-            <ChatBubble message={message} key={i} />
+            <ChatBubble
+              message={message}
+              key={i}
+              scrollToBottom={scrollToBottom}
+            />
           ))}
+          <div ref={lastRef}></div>
         </div>
       </div>
 
@@ -121,7 +133,7 @@ export const Chat = () => {
           <input
             type="text"
             id="new-message"
-            placeholder="Escribir mensaje"
+            placeholder="Escribe un mensaje"
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
           />

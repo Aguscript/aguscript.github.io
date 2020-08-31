@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ChatBubble.css';
 
-export const ChatBubble = ({ message }) => {
+export const ChatBubble = ({ message, scrollToBottom }) => {
+  useEffect(() => {
+    scrollToBottom();
+  });
+
   const redes = (
     <div className="message">
       Podés encontrarme en: <br />
@@ -40,17 +44,9 @@ export const ChatBubble = ({ message }) => {
     </div>
   );
 
-  const tabla = (
-    <div className="message">
-      ¿Usted no aprende verdad? Un mensaje más y hay tabla.
-    </div>
-  );
-
   const renderedMessage =
     message.content === '!redes' ? (
       redes
-    ) : message.content === '!tabla' ? (
-      tabla
     ) : (
       <div className="message">{message.content}</div>
     );
@@ -73,11 +69,11 @@ export const ChatBubble = ({ message }) => {
 
 /*TODO:
     -) Hora en envío real
-    -) Agregar "en línea"
-    -) Agregar bloqueo al cuarto mensaje enviado
+    Hecho) Agregar "en línea"
+    Hecho) Agregar bloqueo al cuarto mensaje enviado
     -) Mejorar el renderizado de la burbuja de imagen
     -) Agregar ticks
-    -) Scroll to bottom
+    Hecho) Scroll to bottom
     -) Arreglar backgrounds
-    -) Media queries
+    Hecho) Media queries
 */
