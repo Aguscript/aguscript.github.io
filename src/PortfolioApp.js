@@ -10,7 +10,7 @@ export const PortfolioApp = () => {
       <Chat />
     </AppContainer>
   );
-}
+};
 
 const AppContainer = styled.div`
   display: flex;

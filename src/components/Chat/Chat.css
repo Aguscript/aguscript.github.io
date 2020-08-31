@@ -3,7 +3,7 @@
 :root {
   --main-color: #036058;
   --text-light: #f1f1f1;
-  --chat-bg: #ECE5DD;
+  --chat-bg: #ece5dd;
 }
 
 body {
@@ -14,8 +14,8 @@ body {
 .chat-container {
   width: 350px;
   height: 567px;
-  border: 1px solid rgba(0,0,0,.1);
-  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
   overflow: hidden;
 }
 
@@ -25,6 +25,7 @@ body {
   background-color: var(--main-color);
   align-items: center;
   padding-left: 5px;
+  overflow: hidden;
 }
 
 .icons {
@@ -34,7 +35,13 @@ body {
 .chat-name-container h4 {
   font-weight: 500;
   color: var(--text-light);
-  margin-right: 115px;
+  margin: 0 115px 0 0;
+}
+
+.chat-name-container span {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 13px;
 }
 
 .photo-container {
@@ -51,6 +58,20 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   overflow-y: scroll;
+}
+
+.messages-wrapper::-webkit-scrollbar {
+  transition: all 0.5s;
+  width: 4px;
+  height: 1px;
+}
+
+.messages-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages-wrapper::-webkit-scrollbar-thumb {
+  background: #b3ada7;
 }
 
 .messages-area {
@@ -86,7 +107,7 @@ body {
   border: none;
   border-radius: 50%;
   background-color: #008a7a;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   outline: none;
 }
 

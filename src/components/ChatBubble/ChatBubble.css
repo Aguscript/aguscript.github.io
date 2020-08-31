@@ -1,9 +1,18 @@
+:root {
+  --guest-bubble-color: #e2ffc7;
+}
+
 .bubble-container {
   display: inline-flex;
   max-width: 80%;
   margin-bottom: 1px;
   padding: 0 3px 3px 20px;
   overflow: hidden;
+}
+
+.bc-guest {
+  align-self: flex-end;
+  padding: 0 20px 3px 3px;
 }
 
 .bubble {
@@ -13,6 +22,10 @@
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
+}
+
+.b-guest {
+  background-color: var(--guest-bubble-color);
 }
 
 .bubble-container:first-child .bubble:after {
@@ -45,4 +58,8 @@ a {
   color: #008a7a;
   font-weight: 400;
   text-decoration: none;
+}
+
+.photoMessage {
+  width: 100%;
 }
