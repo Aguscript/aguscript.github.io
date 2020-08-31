@@ -61,14 +61,19 @@ export const ChatBubble = ({ message, scrollToBottom }) => {
         className={message.sender === 'aguscript' ? 'bubble' : 'bubble b-guest'}
       >
         {renderedMessage}
-        <div className="time">12:55</div>
+        <div className="time">
+          {new Date(Date.now()).toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit',
+          })}
+        </div>
       </div>
     </div>
   );
 };
 
 /*TODO:
-    -) Hora en envío real
+    Hecho) Hora en envío real
     Hecho) Agregar "en línea"
     Hecho) Agregar bloqueo al cuarto mensaje enviado
     -) Mejorar el renderizado de la burbuja de imagen
