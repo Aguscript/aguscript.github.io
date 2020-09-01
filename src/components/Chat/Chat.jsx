@@ -9,28 +9,52 @@ export const Chat = () => {
     {
       content: 'Hola!',
       sender: 'aguscript',
+      time: new Date(Date.now()).toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
     },
     {
       content: 'Mi nombre es Agustín Rodriguez.',
       sender: 'aguscript',
+      time: new Date(Date.now()).toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
     },
     {
       content:
         'Soy Analista de Sistemas y actualmente curso el último año de Ingeniería en Sistemas.',
       sender: 'aguscript',
+      time: new Date(Date.now()).toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
     },
     {
       content:
         'Me apasiona la programación, sobre todo el desarrollo web y móvil. 💛',
       sender: 'aguscript',
+      time: new Date(Date.now()).toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
     },
     {
       content: 'Hago cositas en React y React Native. ⚛️',
       sender: 'aguscript',
+      time: new Date(Date.now()).toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
     },
     {
       content: '!redes',
       sender: 'aguscript',
+      time: new Date(Date.now()).toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
     },
   ]);
   const [newMessage, setNewMessage] = useState('');
@@ -53,6 +77,11 @@ export const Chat = () => {
       {
         content: newMessage,
         sender: 'guest',
+        time: new Date(Date.now()).toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+        }),
+        seen: replies >= 3 ? false : true,
       },
     ]);
 
@@ -66,6 +95,10 @@ export const Chat = () => {
             content:
               'Este es un chat estático, así que no voy a recibir lo que escribas, mejor contactame por mis redes. :)',
             sender: 'aguscript',
+            time: new Date(Date.now()).toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            }),
           },
         ]);
         setReplies((replies) => (replies += 1));
@@ -76,6 +109,10 @@ export const Chat = () => {
           {
             content: '¿Usted no aprende, verdad? Un mensaje más y hay tabla.',
             sender: 'aguscript',
+            time: new Date(Date.now()).toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            }),
           },
         ]);
         setReplies((replies) => (replies += 1));
@@ -86,6 +123,10 @@ export const Chat = () => {
           {
             content: 'No tengo tiempo para esto, te vas bloqueado.',
             sender: 'aguscript',
+            time: new Date(Date.now()).toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            }),
           },
         ]);
         setReplies((replies) => (replies += 1));
@@ -136,6 +177,11 @@ export const Chat = () => {
             placeholder="Escribe un mensaje"
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.keyCode === 13) {
+                renderNewMessage();
+              }
+            }}
           />
         </div>
 

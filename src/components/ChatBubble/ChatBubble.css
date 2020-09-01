@@ -18,10 +18,10 @@
 .bubble {
   display: inline-flex;
   position: relative;
-  padding: 7px;
+  padding: 5px 7px;
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .b-guest {
@@ -29,7 +29,7 @@
 }
 
 .bubble-container:first-child .bubble:after {
-  content: "";
+  content: '';
   position: absolute;
   top: -9px;
   left: -4px;
@@ -46,12 +46,17 @@
   word-break: break-word;
 }
 
-.time {
+.time-with-seen {
   display: flex;
   align-items: flex-end;
-  font-size: 13px;
-  color: rgba(0,0,0,.5);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
   margin-left: 10px;
+}
+
+svg {
+  margin-left: 3px;
+  margin-bottom: 2px;
 }
 
 a {
