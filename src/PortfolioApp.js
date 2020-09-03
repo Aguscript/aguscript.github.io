@@ -25,7 +25,7 @@ const AppContainer = styled.div`
   height: 100vh;
   position: relative;
 
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-height: 760px) and (min-width: 992px) {
     height: 980px;
     width: 1400px;
     margin: 0 auto;

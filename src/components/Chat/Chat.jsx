@@ -7,8 +7,9 @@ import defaultAvatar from '../../assets/defaultAvatar.png';
 export const Chat = () => {
   const [messages, setMessages] = useState([
     {
-      content: 'Hola!',
+      content: '¡Hola!',
       sender: 'aguscript',
+      tail: true,
       time: new Date(Date.now()).toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
@@ -17,6 +18,7 @@ export const Chat = () => {
     {
       content: 'Mi nombre es Agustín Rodriguez.',
       sender: 'aguscript',
+      tail: false,
       time: new Date(Date.now()).toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
@@ -26,6 +28,7 @@ export const Chat = () => {
       content:
         'Soy Analista de Sistemas y actualmente curso el último año de Ingeniería en Sistemas.',
       sender: 'aguscript',
+      tail: false,
       time: new Date(Date.now()).toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
@@ -35,6 +38,7 @@ export const Chat = () => {
       content:
         'Me apasiona la programación, sobre todo el desarrollo web y móvil. 💛',
       sender: 'aguscript',
+      tail: false,
       time: new Date(Date.now()).toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
@@ -43,6 +47,7 @@ export const Chat = () => {
     {
       content: 'Hago cositas en React y React Native. ⚛️',
       sender: 'aguscript',
+      tail: false,
       time: new Date(Date.now()).toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
@@ -51,6 +56,7 @@ export const Chat = () => {
     {
       content: '!redes',
       sender: 'aguscript',
+      tail: false,
       time: new Date(Date.now()).toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
@@ -77,6 +83,7 @@ export const Chat = () => {
       {
         content: newMessage,
         sender: 'guest',
+        tail: replies >= 4 ? false : true,
         time: new Date(Date.now()).toLocaleTimeString([], {
           hour: '2-digit',
           minute: '2-digit',
@@ -95,6 +102,7 @@ export const Chat = () => {
             content:
               'Este es un chat estático, así que no voy a recibir lo que escribas, mejor contactame por mis redes. :)',
             sender: 'aguscript',
+            tail: true,
             time: new Date(Date.now()).toLocaleTimeString([], {
               hour: '2-digit',
               minute: '2-digit',
@@ -109,6 +117,7 @@ export const Chat = () => {
           {
             content: '¿Usted no aprende, verdad? Un mensaje más y hay tabla.',
             sender: 'aguscript',
+            tail: true,
             time: new Date(Date.now()).toLocaleTimeString([], {
               hour: '2-digit',
               minute: '2-digit',
@@ -123,6 +132,7 @@ export const Chat = () => {
           {
             content: 'No tengo tiempo para esto, te vas bloqueado.',
             sender: 'aguscript',
+            tail: true,
             time: new Date(Date.now()).toLocaleTimeString([], {
               hour: '2-digit',
               minute: '2-digit',
@@ -133,6 +143,7 @@ export const Chat = () => {
         setIsBlocked(true);
         break;
       default:
+        setReplies((replies) => (replies += 1));
         break;
     }
   };

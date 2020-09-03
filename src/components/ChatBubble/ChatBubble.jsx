@@ -84,7 +84,9 @@ export const ChatBubble = ({ message, scrollToBottom }) => {
   return (
     <div
       className={
-        message.sender === 'aguscript' ? 'bubble-container' : 'bc-guest'
+        message.sender === 'aguscript'
+          ? `bubble-container ${message.tail && 'tail-h'}`
+          : `bubble-container bc-guest ${message.tail && 'tail-g'}`
       }
     >
       <div
@@ -100,14 +102,3 @@ export const ChatBubble = ({ message, scrollToBottom }) => {
     </div>
   );
 };
-
-/*TODO:
-    Hecho) Hora en envío real
-    Hecho) Agregar "en línea"
-    Hecho) Agregar bloqueo al cuarto mensaje enviado
-    Quitado) Mejorar el renderizado de la burbuja de imagen
-    Hecho) Agregar ticks
-    Hecho) Scroll to bottom
-    Hecho) Arreglar backgrounds
-    Hecho) Media queries
-*/
