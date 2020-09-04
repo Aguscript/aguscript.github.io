@@ -1,0 +1,22 @@
+.AppWrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.AppContainer {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+@media only screen and (min-height: 900px) and (min-width: 992px) {
+  .AppContainer {
+    height: 980px;
+    width: 1400px;
+    margin: 0 auto;
+    background-image: url('./assets/phone.svg');
+    background-repeat: no-repeat;
+    background-attachment: local;
+  }
+}

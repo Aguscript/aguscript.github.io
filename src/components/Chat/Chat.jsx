@@ -36,7 +36,7 @@ export const Chat = () => {
     },
     {
       content:
-        'Me apasiona la programación, sobre todo el desarrollo web y móvil. 💛',
+        'Me encanta la programación, sobre todo el desarrollo web y móvil. 💛',
       sender: 'aguscript',
       tail: false,
       time: new Date(Date.now()).toLocaleTimeString([], {
@@ -100,7 +100,7 @@ export const Chat = () => {
           ...messages,
           {
             content:
-              'Este es un chat estático, así que no voy a recibir lo que escribas, mejor contactame por mis redes. :)',
+              'Este es un chat ficticio, por lo que no voy a recibir lo que escribas. Mejor contactame por mis redes. 😌',
             sender: 'aguscript',
             tail: true,
             time: new Date(Date.now()).toLocaleTimeString([], {
