@@ -17,6 +17,7 @@ body {
   width: 308px;
   height: 567px;
   background-image: url('../../assets/chat-pattern.svg');
+  background-color: #e4ddd5;
   overflow: hidden;
   display: flex;
   flex-direction: column;
