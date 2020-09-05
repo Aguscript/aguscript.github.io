@@ -10,7 +10,7 @@
   position: relative;
 }
 
-@media only screen and (min-height: 900px) and (min-width: 992px) {
+@media only screen and (min-height: 700px) and (min-width: 992px) {
   .AppContainer {
     height: 980px;
     width: 1400px;

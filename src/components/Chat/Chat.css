@@ -144,7 +144,7 @@ body {
   color: rgba(34, 32, 9, 0.4);
 }
 
-@media only screen and (max-height: 900px), (max-width: 992px) {
+@media only screen and (max-height: 700px), (max-width: 992px) {
   .chat-container {
     width: 100vw;
     height: 100vh;
